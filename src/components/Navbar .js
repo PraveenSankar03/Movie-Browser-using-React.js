@@ -4,9 +4,13 @@ import "./Navbar.css";
 const Navbar = ({ searchText, setSearchText }) => {
   const navigate = useNavigate()
   const updateSearchText = (e) => {
-    navigate('/search')
     setSearchText(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!searchText.trim()) return;
+    navigate('/search')
+  }
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -42,7 +46,7 @@ const Navbar = ({ searchText, setSearchText }) => {
               </Link> */}
             </li>
           </ul>
-          <form className="d-flex" role="search">
+          <form className="d-flex" role="search" onSubmit={handleSubmit}>
             <input
               className="form-control me-2"
               type="search"
