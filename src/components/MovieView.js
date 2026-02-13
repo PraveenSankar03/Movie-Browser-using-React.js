@@ -13,7 +13,7 @@ const MovieView = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US&page=1&include_adult=false`
     )
       .then((response) => response.json())
       .then((data) => {
