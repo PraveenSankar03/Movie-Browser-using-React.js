@@ -15,8 +15,7 @@ const MovieCard = ({ obj }) => {
         <div className="card h-100 shadow-sm">
           <h5 className="card-title">{obj.original_title}</h5>
           <Link to={detailsURL} className="btn btn-primary">
-            {" "}
-            show details{" "}
+            show details
           </Link>
         </div>
       </div>
