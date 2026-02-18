@@ -52,18 +52,5 @@ const MovieView = () => {
   return renderMovieDetails();
 };
 
-// return (
-//     <>
-//     <Render />
-//       <img
-//         className="my-4 mx-5"
-//         src={posterURL}
-//         alt={movieDetails.original_title}
-//       />
-//       <h5 className="mx-5">
-//         <strong>Synopsis:</strong> {movieDetails.overview}
-//       </h5>
-//     </>
-//   );
 
 export default MovieView;
