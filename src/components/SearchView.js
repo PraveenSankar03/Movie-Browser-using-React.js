@@ -12,7 +12,7 @@ const MovieCard = ({ obj }) => {
         <img
           src={posterURL}
           className="card-img-top img-fluid"
-          alt={obj.original_title} alt="Picture not available"
+          alt={obj.original_title}
         />
         <div className="card h-100 shadow-sm">
           <h5 className="card-title">{obj.original_title}</h5>
