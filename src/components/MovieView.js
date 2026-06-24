@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 const MovieView = () => {
   const { id } = useParams();
-  // console.log(id)
 
   const [movieDetails, setMovieDetails] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,11 +19,11 @@ const MovieView = () => {
         setMovieDetails(data);
         setLoading(false);
       });
-    console.log("Making an API request for Movie id", id);
   }, [id, API_KEY]);
 
  const posterURL = `https://image.tmdb.org/t/p/w200//${movieDetails.poster_path}.jpg`;
  const backdropURL =`https://image.tmdb.org/t/p/original//${movieDetails.backdrop_path}`
+ 
   function renderMovieDetails() {
     if (loading) {
       return <Hero text="Loading..." />;
@@ -40,8 +39,10 @@ const MovieView = () => {
               </div>
               <div className="col-md-9">
                 <h2>{movieDetails.original_title}</h2>
-                <p className="lead">{movieDetails.overview}</p>
-                <p className="lead">Released : {movieDetails.release_date}</p>
+                <p className="lead"><strong>Synopsis : </strong>{movieDetails.overview}</p>
+                <p className="lead"><strong>Released : </strong>{movieDetails.release_date}</p>
+                <p className="lead"><strong>Populariy : </strong>{movieDetails.popularity}</p>
+                <p className="lead"><strong>Original Language : </strong>{movieDetails.original_language}</p>
               </div>
             </div>
           </div>

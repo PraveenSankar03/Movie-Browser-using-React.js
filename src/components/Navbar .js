@@ -2,20 +2,24 @@ import { useNavigate, Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = ({ searchText, setSearchText }) => {
-  const navigate = useNavigate()
+  
   const updateSearchText = (e) => {
     setSearchText(e.target.value);
   };
+
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!searchText.trim()) return;
-    navigate('/search')
-  }
+    if (!searchText.trim()) 
+      return;
+    navigate("/search");
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Movie Browser
+          My Movie Browser
         </Link>
         <button
           className="navbar-toggler"
@@ -41,9 +45,19 @@ const Navbar = ({ searchText, setSearchText }) => {
               </Link>
             </li>
             <li className="nav-item">
-              {/* <Link className="nav-link disabled" aria-disabled="true" to="/">
-                Disabled
-              </Link> */}
+              <a className="nav-link" href="https://github.com/PraveenSankar03" target="blank">
+                Github
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="https://portfolio-praveen03.vercel.app/" target="blank">
+                Portfolio
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=praveensankar3333@gmail.com" target="blank">
+                Contact Me
+              </a>
             </li>
           </ul>
           <form className="d-flex" role="search" onSubmit={handleSubmit}>

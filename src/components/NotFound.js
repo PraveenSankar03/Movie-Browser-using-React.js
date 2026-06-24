@@ -7,7 +7,7 @@ const NotFound = () => {
     <div className="container">
       <div className="rows">
         <div className="col-lg-8 offset-lg-2 my-5">
-          <p className="lead"> The term you are trying to fetch doesn't exist. Please try fetching something else.
+          <p className="lead"> <strong>The term you are trying to fetch doesn't exist. Please try something else.</strong>
           </p>
         </div>
       </div>

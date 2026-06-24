@@ -15,7 +15,6 @@ function App() {
   const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
   useEffect(() => {
-    //  console.log('Searching for the term', searchText);
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchText}&language=en-US&page=1&include_adult=false`
     )
